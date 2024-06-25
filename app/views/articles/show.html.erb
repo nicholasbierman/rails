@@ -11,7 +11,7 @@
 </ul>
 
 <h2>Add a comment:</h2>
-
+<%# .build builds a nested route %>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
 <p>
     <%= form.label :commenter 
