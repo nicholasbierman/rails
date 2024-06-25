@@ -3,4 +3,7 @@ class Article < ApplicationRecord
     validates :title, presence: true
     # same as above, but must also be 10 characters long
     validates :body, presence: true, length: { minimum: 10 }
+
+    #association to comments table
+    has_many :comments
 end
