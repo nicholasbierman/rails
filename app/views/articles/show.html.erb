@@ -10,12 +10,20 @@
     } %></li>
 </ul>
 
+<h2>Comments:</h2>
+<% @article.comments.each do |comment|%>
+<p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+</p>
+<p><%= comment.body %></p>
+<% end %>
+
 <h2>Add a comment:</h2>
 <%# .build builds a nested route %>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
 <p>
-    <%= form.label :commenter 
-    %>
+    <%= form.label :commenter %>
     <%= form.text_field :commenter %>
 </p>
 
@@ -26,5 +34,4 @@
 <p>
     <%= form.submit %>
 </p>
-
 <% end %>
