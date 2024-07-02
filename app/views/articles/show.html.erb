@@ -12,6 +12,7 @@
 
 <h2>Comments:</h2>
 <%# "render" will iterate over the comments collection and pass each comment to a local variable named the same as the partial %>
+<%# @article is available to any partials rendered in this view because we defined it as an instance variable%>
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
