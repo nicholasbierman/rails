@@ -3,7 +3,9 @@ class Comment < ApplicationRecord
 
   validates :commenter, presence: true
   validates :body, presence: true
-  validates :status, presence: true
-  
+  VALID_STATUSES = ['public', 'private', 'archived']
+
+  validates :status, inclusion: { in: VALID_STATUSES }
+
 
 end
