@@ -11,13 +11,8 @@
 </ul>
 
 <h2>Comments:</h2>
-<% @article.comments.each do |comment|%>
-<p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-</p>
-<p><%= comment.body %></p>
-<% end %>
+<%# "render" will iterate over the comments collection and pass each comment to a local variable named the same as the partial %>
+<%= render @article.comments %>
 
 <h2>Add a comment:</h2>
 <%# .build builds a nested route %>
