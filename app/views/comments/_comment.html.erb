@@ -9,3 +9,14 @@
     <strong>Comment:</strong>
     <%= comment.body %>
 </p>
+
+<p>
+    <%# the below will fire a delete request to /articles/:article_id/comments/:comment_id %>
+    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+        
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure you want to delete this comment?"
+    }%>
+</p>
+
+<% end %>
